@@ -3,7 +3,7 @@
 BLOCK_SIZE = 64 # размер блока
 from compress import compress
 
-M = bytes.fromhex("323130393837363534333231303938373635343332313039383736353433323130393837363534333231303938373635343332313039383736353433323130")
+M = bytes.fromhex("fbe2e5f0eee3c820fbeafaebef20fffbf0e1e0f0f520e0ed20e8ece0ebe5f0f2f120fff0eeec20f120faf2fee5e2202ce8f6f3ede220e8e6eee1e8f0f2d1202ce8f0f2e5e220e5d1")
 
 # фунция побайтового сжоления 512-битовых значений по модулю 2^512 (64 байта)
 def summa512(a, b):
@@ -52,4 +52,9 @@ def streebog256(M):
 def streebog512(M):
     return stribog_gost34(M, bits=512)
 
-print(streebog512(M).hex())
+
+# тест алгоритма закоментировать после или удалить
+#print("Тест вычисления КС")
+#print("Исходная последовательность: ", M.hex())
+#print(f"Хэш файла 256бит:\n{streebog256(M).hex()} \n")
+#print(f"Хэш файла 512бит:\n{streebog512(M).hex()}")
