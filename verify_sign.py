@@ -28,7 +28,7 @@ def verify_sign(h, r, s, Q, params):
     z2 = (-r * v) % q
 
     # вычисляем точку эллиптической кривой С = z^P+ z2Q
-    C = point_sum(scalar_mult(z1, (xP, yP), p, a), scalar_mult(z2, Q p, a), p, a)
+    C = point_sum(scalar_mult(z1, (xP, yP), p, a), scalar_mult(z2, Q, p, a), p, a)
 
     #R = xc (mod q)
     R = C[0] % q
