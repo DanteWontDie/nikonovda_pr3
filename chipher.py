@@ -1,7 +1,7 @@
 # функция 
 
 from constants import C
-from hash_file import X, LPS
+from transform import X, LPS
 
 # ключевое расписание: из K вычисляем K1..K13
 def key_schedule(K):
