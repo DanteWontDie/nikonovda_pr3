@@ -1,6 +1,7 @@
 # Прогруммная реализация ГОСТ Р 34.11-2012
 
 BLOCK_SIZE = 64 # размер блока
+from compress import compress
 
 M = bytes.fromhex("323130393837363534333231303938373635343332313039383736353433323130393837363534333231303938373635343332313039383736353433323130")
 
@@ -8,12 +9,6 @@ M = bytes.fromhex("3231303938373635343332313039383736353433323130393837363534333
 def summa512(a, b):
     result = ((int.from_bytes(a, "big")) + int.from_bytes(b, "big")) % (2 **512)
     return result.to_bytes(64, "big")
-
-# функция сжатия g_N(h, m) = E(LPS(h ⊕ N), m) ⊕ h ⊕ m
-def compress(h, m, N):
-    # Функция сжатия: E(LPS(h ⊕ N), m) ⊕ h ⊕ m
-    # TODO: реализовать после cipher.py
-    raise NotImplementedError("compress не реализована")
 
 # основная функция расчета КС
 def stribog_gost34(M, bits):
@@ -56,3 +51,5 @@ def streebog256(M):
 
 def streebog512(M):
     return stribog_gost34(M, bits=512)
+
+print(streebog512(M).hex())
