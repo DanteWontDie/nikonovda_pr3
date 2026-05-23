@@ -1,0 +1,19 @@
+# генерация ключевой пары
+
+import random
+from arithmetic_of_points import scalar_mult
+
+def keygen(params):
+    p  = params['p']
+    a  = params['a']
+    q  = params['q']
+    xp = params['xp']
+    yp = params['yp']
+
+    # ключ подписи d случайное целое число, 0 < d < q. Генерируем random
+    d = random.randint(1, q - 1)
+
+    # ключ проверки подписи Q = d·P
+    Q = scalar_mult(d, (xp, yp), p, a)
+
+    return d, Q
