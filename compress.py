@@ -1,6 +1,6 @@
 # функция сжатия 
-from transforms import X, LPS
-from cipher import E
+from transform import X, LPS
+from chipher import E
  
 # из стандарта g N(h, m) = E(LPS(h ⊕ N), m) ⊕ h ⊕ m
 def compress(h, m, N):
