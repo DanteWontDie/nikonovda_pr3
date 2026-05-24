@@ -4,7 +4,6 @@ import random
 from arithmetic_of_point import scalar_mult
 
 def keygen(params):
-    bits = ("Длина хэша (256/512) [256]: ").strip() or "256"
     p  = params['p']
     a  = params['a']
     q  = params['q']

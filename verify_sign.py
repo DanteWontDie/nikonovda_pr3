@@ -7,8 +7,8 @@ def verify_sign(h, r, s, Q, params):
     p = params["p"]
     a = params["a"]
     q = params["q"]
-    xP = params["xP"]
-    yP = params["yP"]
+    xp = params["xp"]
+    yp = params["yp"]
 
     # проверяем что 0 < r < q и 0 < s < q
     if not (0 < r < q and 0 < s < q):
@@ -28,7 +28,7 @@ def verify_sign(h, r, s, Q, params):
     z2 = (-r * v) % q
 
     # вычисляем точку эллиптической кривой С = z^P+ z2Q
-    C = point_sum(scalar_mult(z1, (xP, yP), p, a), scalar_mult(z2, Q, p, a), p, a)
+    C = point_sum(scalar_mult(z1, (xp, yp), p, a), scalar_mult(z2, Q, p, a), p, a)
 
     #R = xc (mod q)
     R = C[0] % q

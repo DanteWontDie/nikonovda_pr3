@@ -7,8 +7,8 @@ def sign(h, d, params):
     p = params["p"]
     a = params["a"]
     q = params["q"]
-    xP = params["xP"]
-    yP = params["yP"]
+    xp = params["xp"]
+    yp = params["yp"]
 
     # вычисляем целое число a из хеша вектора h 
     alpha = int.from_bytes(h, "big")
@@ -21,7 +21,7 @@ def sign(h, d, params):
         k = random.randint(1, q - 1)
 
         # вычисляем точку С = kP и определяем r = xc mod q
-        C = scalar_mult(k, (xP, yP), p, a)
+        C = scalar_mult(k, (xp, yp), p, a)
         r = C[0] % q
         if r == 0:
             continue

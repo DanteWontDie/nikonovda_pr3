@@ -1,12 +1,13 @@
 # Программная реализация электронной подписи и вычисления хеш суммы ГОСТ Р 34.10-2012 и ГОСТ Р 34.11-2012
 # Главный файл работы программы
 
-import os
+import os, sys
+sys.path.insert(0, 'hash') # иначе не работает
 from test_parameters import test_256, test_512
 from keygen import keygen
 from sign import sign
 from verify_sign import verify_sign
-from hash.hash_file import streebog256, streebog512
+from hash_file import streebog256, streebog512
 
 # берем файл из директории test_file
 file_name = os.listdir("test_file")[0]
