@@ -1,7 +1,7 @@
 # генерация ключевой пары
 
 import random
-from arithmetic_of_points import scalar_mult
+from arithmetic_of_point import scalar_mult
 
 def keygen(params):
     bits = ("Длина хэша (256/512) [256]: ").strip() or "256"

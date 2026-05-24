@@ -1,7 +1,7 @@
 # функция создания ЭП
 
 import random
-from arithmetic_of_pints import scalar_mult
+from arithmetic_of_point import scalar_mult
 
 def sign(h, d, params):
     p = params["p"]

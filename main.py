@@ -2,11 +2,11 @@
 # Главный файл работы программы
 
 import os
-from test_parametrs import test_256, test_512
+from test_parameters import test_256, test_512
 from keygen import keygen
 from sign import sign
-from verify import verify
-from hash_file import streebog256, streebog512
+from verify_sign import verify_sign
+from hash.hash_file import streebog256, streebog512
 
 # берем файл из директории test_file
 file_name = os.listdir("test_file")[0]
