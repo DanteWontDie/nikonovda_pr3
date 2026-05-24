@@ -1,6 +1,13 @@
 # Программная реализация электронной подписи и вычисления хеш суммы ГОСТ Р 34.10-2012 и ГОСТ Р 34.11-2012
 # Главный файл работы программы
 
+from test_parametrs import test_256, test_512
+from keygen import keygen
+from sign import sign
+from verify import verify
+
+
+
 
 # основное меню программы
 def main_menu():
